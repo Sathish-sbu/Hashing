@@ -1,0 +1,35 @@
+"""
+Given an unsorted array with repetitions, the task is to group multiple occurrence of individual elements. The grouping should happen in a way that the order of first occurrences of all elements is maintained.
+
+Examples:
+
+Input: arr[] = {5, 3, 5, 1, 3, 3}
+Output:        {5, 5, 3, 3, 3, 1}
+
+Input: arr[] = {4, 6, 9, 2, 3, 4, 9, 6, 10, 4}
+Output:        {4, 4, 4, 6, 6, 9, 9, 2, 3, 10}
+
+"""
+
+def arrangelist(list1):
+  d1 = {}
+  for each in list1:
+    try:
+      d1[each] += 1
+    except:
+      d1[each] = 1
+  
+  result = list()
+  
+  for key, value in d1.items():
+    result.extend([key] * value)
+  
+  print (result)
+  
+  
+  
+  
+list1 = [5,3,5,1,3,3]
+list2 = [4,6,9,2,3,4,9,6,10,4]
+arrangelist(list1)
+arrangelist(list2)
