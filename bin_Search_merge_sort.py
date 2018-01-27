@@ -1,3 +1,5 @@
+
+
 """
 Mergesort & Binsearch
 
@@ -34,3 +36,23 @@ def mergesort(l1, start, end):
     s2 = mergesort(l1,mid+1,end)  
     return merge(s1,s2)
   
+  
+def binsearch(l1, x, start, end):
+  print ('Checking from ' + str(start) + ' and ' + str(end))
+  if start == end or start == end - 1:
+    return x == l1[start] or x == l1[end]
+  elif start < end:
+    mid = int((start + end)/2)
+    print (mid)
+    if x < l1[mid]:
+      return binsearch(l1,x,start,mid) 
+    else:
+      return binsearch(l1,x,mid,end)
+  else:
+    return False
+
+l1 = [12,23,56,12,57,77,1,5,3,2,1,99]
+l1 = mergesort(l1, 0, len(l1)-1)
+print (l1)
+x = 100
+print (binsearch(l1, x, 0, len(l1)-1))
