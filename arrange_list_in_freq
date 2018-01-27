@@ -9,10 +9,13 @@ Output:        {5, 5, 3, 3, 3, 1}
 Input: arr[] = {4, 6, 9, 2, 3, 4, 9, 6, 10, 4}
 Output:        {4, 4, 4, 6, 6, 9, 9, 2, 3, 10}
 
+from python 3.6, the normal dict itself maintains order of insertion, so no need of 
+ordered dict
 """
+from collections import OrderedDict
 
 def arrangelist(list1):
-  d1 = {}
+  d1 = OrderedDict()
   for each in list1:
     try:
       d1[each] += 1
@@ -26,9 +29,7 @@ def arrangelist(list1):
   
   print (result)
   
-  
-  
-  
+
 list1 = [5,3,5,1,3,3]
 list2 = [4,6,9,2,3,4,9,6,10,4]
 arrangelist(list1)
